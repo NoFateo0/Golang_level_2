@@ -1,0 +1,19 @@
+Собрал под 4 разные системы.
+Вывод команды file.
+
+nofate@nofatePC:/mnt/e/Sources/Golang_GB_2/lesson2/ex1$ file ex1_windows.exe
+ex1_windows.exe: PE32+ executable (console) x86-64 (stripped to external PDB), for MS Windows
+
+nofate@nofatePC:/mnt/e/Sources/Golang_GB_2/lesson2/ex1$ file ex1_darwin
+ex1_darwin: Mach-O 64-bit x86_64 executable
+
+nofate@nofatePC:/mnt/e/Sources/Golang_GB_2/lesson2/ex1$ file ex1_linux
+ex1_linux: ELF 64-bit LSB executable, x86-64, version 1 (SYSV), statically linked, Go BuildID=0eUBJldifatpb1eynbZL/gEpobuMBsXZwK9gdpqSU/M-HfpBEGi8UcWVzA2uYb/7GkZx_xgFamG-j6y3ZTz, not stripped
+
+nofate@nofatePC:/mnt/e/Sources/Golang_GB_2/lesson2/ex1$ file ex1_freebsd
+ex1_freebsd: ELF 64-bit LSB executable, x86-64, version 1 (FreeBSD), statically linked, Go BuildID=i9G_01y_Y0QT21tgyDH4/ujogBHYwO5Ef3TlNQHxH/W2R8ONAymAqzC4QTAKEh/naYJooZnHquGaNyiLO69, not stripped
+
+Из под WSL запускаются файлы для Linux и Windows.
+Файл для Freebsd выдает ошибку Segmentation fault (core dumped).
+Файл для darwin выдает ошибку -bash: ./ex1_darwin: cannot execute binary file: Exec format error.
+
