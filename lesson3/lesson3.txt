@@ -1,0 +1,46 @@
+1.
+Создаем создаем репозиторий, иницализируем модуль.
+mkdir lesson3_project
+git init
+git remote add lesson3_project git@github.com:NoFateo0/lesson3_project.git
+go mod init github.com/NoFateo0/lesson3_project
+Создаем свой пакет.
+mkdir hello
+cd hello
+Создаем hello.go
+2.
+Добавляем файлы, делаем коммит и пушим.
+git add .
+git commit -m 'initial commit.'
+git push lesson3_project
+git tag -a v0.0.1 -m 'initial commit.'
+git push lesson3_project --tags
+Создаем новый проект и импортируем пакет из нашего модуля.
+package main
+import "github.com/NoFateo0/lesson3_project/hello"
+go get github.com/NoFateo0/lesson3_project/hello
+3.
+Создаем вторую версию проекта.
+mkdir v2
+Копируем туда наш hello и go.mod.
+Потом редактируем go mod.
+go mod edit -module github.com/NoFateo0/lesson3_project/v2 v2/go.mod
+4.
+Добавляем код в новый hello.go и пушим изменения.
+git add .
+git commit -m '.added version 2'
+git push lesson3_project
+git tag -a v2.0.0 -m '.added version 2'
+git push lesson3_project --tags
+Добавляем новую зависимость в наш новый проект.
+package main
+import (
+	"github.com/NoFateo0/lesson3_project/hello"
+	hello2 "github.com/NoFateo0/lesson3_project/v2/hello"
+)
+Получаем ее из репозитория.
+go get github.com/NoFateo0/lesson3_project/v2/hello
+5.
+Используем go mod tidy
+
+
